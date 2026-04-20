@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Cocoa | Pure Taste, Pure Energy</title>
+  <meta name="description" content="Golden Cocoa – 100% natural cocoa powder from Cameroon, available in Mauritius. Rich taste, health benefits, fast delivery across the island." />
+  <meta name="keywords" content="cocoa powder Mauritius, poudre de cacao, natural cocoa, Golden Cocoa, Rose Hill" />
+  <meta property="og:title" content="Golden Cocoa | Pure Taste, Pure Energy" />
+  <meta property="og:description" content="Experience the richness of natural, high-quality cocoa powder. Delivered across Mauritius." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-deep:  #1A0F08;
+      --brown-dark:  #2C1810;
+      --brown-mid:   #4A2C1A;
+      --brown-light: #7B4F32;
+      --gold:        #C9973A;
+      --gold-light:  #E8C06A;
+      --gold-pale:   #F5DFA0;
+      --cream:       #F8F2E6;
+      --cream-dark:  #EDE3CE;
+      --white:       #FDFAF5;
+      --text-dark:   #1A0F08;
+      --text-mid:    #5C3D20;
+      --text-light:  #9E7A55;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(26,15,8,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--gold-light);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; letter-spacing: 0.5px;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--gold);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep) !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 50px !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { opacity: 0.9; }
+    .hamburger {
+      display: none; flex-direction: column; cursor: pointer; gap: 5px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px; background: var(--gold-light);
+      transition: all 0.3s; display: block;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(201,151,58,0.12) 0%, transparent 60%),
+        linear-gradient(135deg, var(--brown-deep) 0%, #3D1F0E 50%, #1A0F08 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 100px 5% 60px;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: radial-gradient(circle, var(--gold) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-glow {
+      position: absolute; right: -10%; top: 10%;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,151,58,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 700px; position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,151,58,0.15);
+      border: 1px solid rgba(201,151,58,0.3);
+      border-radius: 50px; padding: 6px 16px;
+      margin-bottom: 2rem;
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold-light); font-weight: 500;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800; line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .hero-title .gold-text {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold-pale));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-slogan {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--gold-light); font-style: italic;
+      margin-bottom: 1.25rem; font-family: 'Playfair Display', serif;
+    }
+    .hero-desc {
+      font-size: 1.05rem; line-height: 1.8;
+      color: rgba(255,255,255,0.7); max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat { color: var(--white); }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: var(--gold-light);
+    }
+    .hero-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); letter-spacing: 1px; text-transform: uppercase; }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 2rem; border-radius: 50px;
+      font-size: 0.95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 0.3s; letter-spacing: 0.3px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep);
+      box-shadow: 0 8px 32px rgba(201,151,58,0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(201,151,58,0.55);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .hero-visual {
+      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+      width: min(420px, 40vw);
+    }
+    .hero-product-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,151,58,0.2);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    .hero-product-img {
+      width: 100%; height: 240px; border-radius: 16px;
+      background: linear-gradient(135deg, #3D1F0E, #5C2E0E);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; margin-bottom: 1.25rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-product-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 40% 40%, rgba(201,151,58,0.3) 0%, transparent 60%);
+    }
+    .product-quick-info { display: flex; justify-content: space-between; align-items: flex-end; }
+    .product-quick-name {
+      font-family: 'Playfair Display', serif;
+      color: var(--white); font-size: 1.1rem; font-weight: 600;
+    }
+    .product-quick-weight { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 2px; }
+    .product-quick-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 100px 5%; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem; line-height: 1.8;
+      color: var(--text-light); max-width: 540px;
+    }
+    .divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px; margin: 1rem 0 2rem;
+    }
+
+    /* ─── FEATURES BAR ─── */
+    #features-bar {
+      background: var(--brown-deep);
+      padding: 40px 5%;
+    }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .feature-item {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .feature-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(201,151,58,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .feature-text h4 { color: var(--white); font-size: 0.95rem; font-weight: 600; font-family: 'Inter', sans-serif; }
+    .feature-text p { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 2px; }
+
+    /* ─── PRODUCT SECTION ─── */
+    #products { background: var(--cream); }
+    .products-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .products-header .section-subtitle { margin: 0 auto; }
+    .divider-center { margin: 1rem auto 2rem; }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem; max-width: 1100px; margin: 0 auto;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(44,24,16,0.08);
+      transition: all 0.4s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(44,24,16,0.18);
+    }
+    .product-card.featured {
+      border: 2px solid var(--gold);
+    }
+    .product-badge {
+      position: absolute; top: 1rem; right: 1rem; z-index: 1;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep);
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
+    }
+    .product-img-area {
+      height: 220px;
+      background: linear-gradient(135deg, #2C1810, #4A2C1A);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative; overflow: hidden;
+    }
+    .product-img-area::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 40%, rgba(201,151,58,0.25) 0%, transparent 60%);
+    }
+    .product-img-area .cocoa-icon { position: relative; z-index: 1; font-size: 5rem; }
+    .product-body { padding: 1.75rem; }
+    .product-name {
+      font-size: 1.35rem; font-weight: 700;
+      color: var(--brown-dark); margin-bottom: 0.25rem;
+    }
+    .product-weight { color: var(--text-light); font-size: 0.85rem; margin-bottom: 1rem; }
+    .product-features { list-style: none; margin-bottom: 1.25rem; }
+    .product-features li {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.88rem; color: var(--text-mid); padding: 0.3rem 0;
+    }
+    .product-features li::before {
+      content: '✓';
+      color: var(--gold); font-weight: 700; font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    .product-nutrition {
+      background: var(--cream); border-radius: 12px; padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .product-nutrition h5 {
+      font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 0.6rem; font-family: 'Inter', sans-serif;
+    }
+    .nutrition-row {
+      display: flex; justify-content: space-between;
+      font-size: 0.82rem; color: var(--text-mid);
+      padding: 0.2rem 0;
+    }
+    .nutrition-row span:last-child { color: var(--brown-dark); font-weight: 500; }
+    .product-price-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .product-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--brown-dark);
+    }
+    .product-price span { font-size: 1rem; color: var(--text-light); }
+    .product-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.85rem; border-radius: 14px; text-decoration: none;
+      font-weight: 600; font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .btn-whatsapp:hover { background: #1FAB55; transform: translateY(-2px); }
+    .btn-facebook {
+      background: #1877F2;
+      color: white;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.85rem; border-radius: 14px; text-decoration: none;
+      font-weight: 600; font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .btn-facebook:hover { background: #0E65D6; transform: translateY(-2px); }
+
+    /* ─── PRODUCT PACKAGE MOCKUP ─── */
+    .products-grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
+      justify-content: center;
+    }
+    .pkg-mockup {
+      width: 160px; height: 200px; position: relative; z-index: 1;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
+    }
+    .pkg-mockup.pkg-large { width: 180px; height: 220px; }
+    .pkg-pouch {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #C8A876 0%, #B08A54 50%, #8E6A3A 100%);
+      border-radius: 10px 10px 16px 16px;
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .pkg-pouch::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px;
+      background: linear-gradient(180deg, #6B4220, #4A2812);
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    }
+    .pkg-label {
+      position: absolute; top: 14px; left: 6%; right: 6%;
+      background: linear-gradient(180deg, #6B2818 0%, #3D1608 100%);
+      border-radius: 4px; padding: 8px 6px 6px;
+      text-align: center; color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .pkg-brand {
+      font-size: 6px; letter-spacing: 1px;
+      color: var(--gold-light); font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .pkg-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; font-weight: 700; line-height: 1;
+      color: white; margin-bottom: 2px;
+    }
+    .pkg-natural {
+      font-size: 8px; font-weight: 700;
+      color: white; margin-bottom: 3px;
+      letter-spacing: 0.5px;
+    }
+    .pkg-weight {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 800;
+      color: var(--gold-light); line-height: 1;
+      margin-bottom: 3px;
+    }
+    .pkg-origin {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--brown-deep);
+      font-size: 6px; font-weight: 700;
+      padding: 2px 6px; border-radius: 8px;
+      letter-spacing: 0.3px;
+    }
+    .pkg-powder {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 44%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #8B5A32 0%, #6B3F20 50%, #4D2A14 100%);
+      border-radius: 0 0 14px 14px;
+    }
+    .pkg-powder::after {
+      content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      border-radius: 50%;
+    }
+
+    /* ─── HIGHLIGHTED PRICE ─── */
+    .price-highlight {
+      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
+      border: 2px solid var(--gold-pale);
+      border-radius: 16px;
+      padding: 0.9rem 1.25rem;
+      display: flex; align-items: baseline; gap: 0.6rem;
+      width: 100%;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .price-highlight-featured {
+      background: linear-gradient(135deg, #FFF4DD, #FFE9B8);
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(201,151,58,0.2);
+    }
+    .product-price-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--brown-dark);
+      background: linear-gradient(135deg, var(--brown-dark), var(--brown-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .price-highlight-featured .product-price-big {
+      background: linear-gradient(135deg, #7A4A1A, var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .price-per {
+      font-size: 0.85rem; color: var(--text-light); font-weight: 500;
+    }
+
+    /* ─── PRICE COMPARISON STRIP ─── */
+    .price-compare {
+      background: linear-gradient(135deg, var(--brown-dark), var(--brown-mid));
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      display: flex; align-items: stretch; justify-content: center;
+      gap: 2rem;
+      box-shadow: 0 8px 32px rgba(44,24,16,0.15);
+      position: relative; overflow: hidden;
+    }
+    .price-compare::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 30%, rgba(201,151,58,0.15) 0%, transparent 60%);
+    }
+    .price-compare-item {
+      flex: 1; text-align: center; position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 0.3rem;
+      padding: 0.5rem 1rem;
+    }
+    .price-compare-item.pc-featured {
+      background: rgba(201,151,58,0.1);
+      border: 1px solid rgba(201,151,58,0.3);
+      border-radius: 14px;
+    }
+    .pc-label {
+      font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); font-weight: 600;
+    }
+    .pc-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 800;
+      color: var(--gold-light);
+    }
+    .pc-rate {
+      font-size: 0.78rem; color: rgba(255,255,255,0.55);
+    }
+    .pc-featured .pc-rate { color: var(--gold-light); font-weight: 600; }
+    .price-compare-divider {
+      width: 1px; background: rgba(255,255,255,0.1);
+    }
+
+    /* ─── VIDEO SHOWCASE ─── */
+    #showcase {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,151,58,0.1) 0%, transparent 60%),
+        linear-gradient(135deg, var(--brown-deep) 0%, #3D1F0E 100%);
+      position: relative; overflow: hidden;
+    }
+    .showcase-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .showcase-content .section-tag { color: var(--gold-light); }
+    .showcase-content .divider { background: linear-gradient(90deg, var(--gold-light), var(--gold)); }
+    .showcase-checks { list-style: none; margin-top: 1rem; }
+    .showcase-checks li {
+      display: flex; align-items: center; gap: 0.65rem;
+      color: rgba(255,255,255,0.75);
+      padding: 0.45rem 0; font-size: 0.93rem;
+    }
+    .showcase-checks li::before {
+      content: '✓';
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep); font-weight: 800; font-size: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .showcase-video-wrap { position: relative; }
+    .showcase-video-frame {
+      position: relative;
+      border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(201,151,58,0.25);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 8px rgba(201,151,58,0.04);
+      aspect-ratio: 9 / 16;
+      max-width: 380px; margin: 0 auto;
+      background: #000;
+    }
+    .showcase-video {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .video-glow {
+      position: absolute; inset: 0; pointer-events: none;
+      box-shadow: inset 0 0 100px rgba(201,151,58,0.08);
+      border-radius: 24px;
+    }
+    .showcase-video-badge {
+      position: absolute; top: -12px; right: 0;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep);
+      padding: 0.5rem 1rem; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 0.4rem;
+      box-shadow: 0 8px 24px rgba(201,151,58,0.4);
+      z-index: 2;
+    }
+    .vb-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--brown-deep); animation: pulse 2s infinite;
+    }
+
+    /* ─── ABOUT SECTION ─── */
+    #about { background: var(--brown-deep); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; max-width: 1100px; margin: 0 auto;
+    }
+    .about-visual { position: relative; }
+    .about-img-box {
+      width: 100%; aspect-ratio: 1;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #3D1F0E, #5C3320);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 8rem; position: relative; overflow: hidden;
+    }
+    .about-img-box::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 35% 35%, rgba(201,151,58,0.3) 0%, transparent 65%);
+    }
+    .about-badge-float {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 20px; padding: 1.25rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(201,151,58,0.4);
+    }
+    .about-badge-float .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 800; color: var(--brown-deep);
+      line-height: 1;
+    }
+    .about-badge-float .label {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--brown-mid);
+    }
+    .about-content .section-tag { color: var(--gold-light); }
+    .about-content .section-title { color: var(--white); }
+    .about-content .divider { background: linear-gradient(90deg, var(--gold-light), var(--gold)); }
+    .about-content p {
+      color: rgba(255,255,255,0.65); line-height: 1.9; margin-bottom: 1.25rem;
+      font-size: 0.97rem;
+    }
+    .about-values {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+    }
+    .about-value {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,151,58,0.15);
+      border-radius: 16px; padding: 1.25rem;
+    }
+    .about-value-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .about-value h4 {
+      color: var(--gold-light); font-size: 0.9rem; font-weight: 600;
+      font-family: 'Inter', sans-serif; margin-bottom: 0.3rem;
+    }
+    .about-value p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: 0; }
+
+    /* ─── BENEFITS SECTION ─── */
+    #benefits { background: var(--cream); }
+    .benefits-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    .benefit-card {
+      background: var(--white); border-radius: 20px; padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.07);
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+    .benefit-card:hover {
+      border-color: var(--gold-pale);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,24,16,0.12);
+    }
+    .benefit-icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(201,151,58,0.15), rgba(232,192,106,0.1));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin: 0 auto 1.25rem;
+    }
+    .benefit-card h3 {
+      font-size: 1.05rem; color: var(--brown-dark); margin-bottom: 0.6rem;
+    }
+    .benefit-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.7; }
+
+    /* ─── REVIEWS ─── */
+    #reviews { background: var(--white); }
+    .reviews-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    .review-card {
+      background: var(--cream); border-radius: 20px; padding: 2rem;
+      border: 1px solid var(--cream-dark);
+      transition: all 0.3s;
+      position: relative;
+    }
+    .review-card:hover {
+      box-shadow: 0 12px 40px rgba(44,24,16,0.1);
+      transform: translateY(-4px);
+    }
+    .review-quote {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-size: 3rem; font-family: 'Playfair Display', serif;
+      color: var(--gold-pale); line-height: 1;
+    }
+    .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .review-text {
+      font-size: 0.93rem; line-height: 1.8; color: var(--text-mid);
+      margin-bottom: 1.5rem; font-style: italic;
+    }
+    .review-author { display: flex; align-items: center; gap: 0.75rem; }
+    .review-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brown-mid), var(--brown-light));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-weight: 700; font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .review-name { font-weight: 600; color: var(--brown-dark); font-size: 0.9rem; }
+    .review-location { font-size: 0.78rem; color: var(--text-light); }
+
+    /* ─── DELIVERY ─── */
+    #delivery { background: var(--brown-deep); }
+    .delivery-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .delivery-content .section-title { color: var(--white); }
+    .delivery-content .section-tag { color: var(--gold-light); }
+    .delivery-content .divider { background: linear-gradient(90deg, var(--gold-light), var(--gold)); }
+    .delivery-content p { color: rgba(255,255,255,0.65); line-height: 1.9; margin-bottom: 2rem; }
+    .delivery-steps { display: flex; flex-direction: column; gap: 1.25rem; }
+    .delivery-step {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .delivery-step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep); font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-family: 'Playfair Display', serif;
+    }
+    .delivery-step-text h4 { color: var(--white); font-size: 0.95rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .delivery-step-text p { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin: 0.2rem 0 0; }
+    .delivery-map {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,151,58,0.2);
+      border-radius: 24px; padding: 2.5rem;
+      text-align: center;
+    }
+    .delivery-map-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+    .delivery-map h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light); font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .coverage-items { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.25rem; }
+    .coverage-item {
+      background: rgba(201,151,58,0.1); border: 1px solid rgba(201,151,58,0.2);
+      color: rgba(255,255,255,0.7); padding: 0.4rem 1rem;
+      border-radius: 50px; font-size: 0.82rem;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--cream); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; max-width: 1000px; margin: 0 auto;
+    }
+    .contact-info .section-title { font-size: 2rem; }
+    .contact-channels { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .contact-channel {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--white); border-radius: 16px; padding: 1rem 1.25rem;
+      text-decoration: none;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.07);
+      transition: all 0.3s;
+    }
+    .contact-channel:hover { transform: translateX(4px); box-shadow: 0 6px 24px rgba(44,24,16,0.12); }
+    .contact-channel-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .channel-wa .contact-channel-icon { background: #E8FFF3; }
+    .channel-fb .contact-channel-icon { background: #EEF3FF; }
+    .channel-loc .contact-channel-icon { background: rgba(201,151,58,0.1); }
+    .contact-channel-text h4 { font-size: 0.85rem; color: var(--brown-dark); font-family: 'Inter', sans-serif; font-weight: 600; }
+    .contact-channel-text p { font-size: 0.8rem; color: var(--text-light); }
+    .contact-form-box {
+      background: var(--white); border-radius: 24px; padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(44,24,16,0.1);
+    }
+    .contact-form-box h3 {
+      font-size: 1.4rem; color: var(--brown-dark); margin-bottom: 1.75rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: var(--text-mid); margin-bottom: 0.4rem; letter-spacing: 0.3px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 0.85rem 1rem; border-radius: 12px;
+      border: 1.5px solid var(--cream-dark);
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      color: var(--text-dark); background: var(--cream);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,151,58,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; padding: 1rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--brown-deep); border: none; border-radius: 14px;
+      font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.3s; letter-spacing: 0.3px;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,151,58,0.4);
+    }
+    .form-success {
+      display: none; text-align: center; padding: 1rem;
+      color: #1FAB55; font-weight: 600; font-size: 0.95rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--brown-deep);
+      border-top: 1px solid rgba(201,151,58,0.1);
+      padding: 4rem 5% 2rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; max-width: 1100px; margin: 0 auto 3rem;
+    }
+    .footer-brand { }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--gold-light); margin-bottom: 0.75rem;
+    }
+    .footer-logo span { color: var(--white); }
+    .footer-brand p { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.8; max-width: 280px; }
+    .footer-socials { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+    .footer-social {
+      width: 40px; height: 40px; border-radius: 10px;
+      border: 1px solid rgba(201,151,58,0.25);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .footer-social:hover {
+      background: rgba(201,151,58,0.15); border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    .footer-col h4 {
+      color: var(--white); font-size: 0.85rem; font-weight: 600;
+      font-family: 'Inter', sans-serif; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 1.25rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.65rem; }
+    .footer-links a {
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      font-size: 0.88rem; transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 2rem; max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+    .footer-made { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+    .footer-made span { color: var(--gold); }
+
+    /* ─── FLOATING WHATSAPP ─── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
+      background: #25D366;
+      border-radius: 50px;
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.9rem 1.4rem;
+      text-decoration: none; color: white;
+      font-weight: 700; font-size: 0.9rem;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+      animation: wa-bounce 3s ease-in-out infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .wa-float:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(37,211,102,0.55);
+    }
+    @keyframes wa-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .wa-float:hover { animation: none; }
+    .wa-float svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── MOBILE NAV MENU ─── */
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed; top: 72px; left: 0; right: 0;
+        background: rgba(26,15,8,0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column; align-items: center;
+        padding: 2rem; gap: 1.5rem;
+        transform: translateY(-110%); transition: transform 0.4s;
+        border-bottom: 1px solid rgba(201,151,58,0.15);
+      }
+      .nav-links.open { transform: translateY(0); }
+
+      #hero { flex-direction: column; text-align: center; padding-top: 120px; }
+      .hero-visual { display: none; }
+      .hero-stats { justify-content: center; }
+      .btn-group { justify-content: center; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-badge-float { bottom: 1rem; right: 1rem; }
+      .about-values { grid-template-columns: 1fr; }
+
+      .delivery-inner { grid-template-columns: 1fr; gap: 3rem; }
+
+      .showcase-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .showcase-video-frame { max-width: 320px; }
+
+      .price-compare { flex-direction: column; gap: 1rem; padding: 1.25rem; }
+      .price-compare-divider { width: 100%; height: 1px; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      section { padding: 70px 5%; }
+    }
+
+    /* ─── SMOOTH SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--brown-deep); }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--gold), var(--gold-light));
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Golden<span>Cocoa</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#showcase">Showcase</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#delivery">Delivery</a></li>
+    <li><a href="#contact" class="nav-cta">Order Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      100% Natural · Origine Cameroun
+    </div>
+    <h1 class="hero-title">
+      <span class="gold-text">Golden</span><br>Cocoa
+    </h1>
+    <p class="hero-slogan">Pure Taste, Pure Energy</p>
+    <p class="hero-desc">
+      Experience the richness of natural, high-quality cocoa — handcrafted from the finest cacao beans, free from additives, and delivered fresh across Mauritius.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Natural</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">0</div>
+        <div class="hero-stat-label">Additives</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24g</div>
+        <div class="hero-stat-label">Protein / 100g</div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <a href="#products" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Order Now
+      </a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-product-card">
+      <div class="hero-product-img">
+        <span style="font-size:5rem;position:relative;z-index:1;">🍫</span>
+      </div>
+      <div class="product-quick-info">
+        <div>
+          <div class="product-quick-name">Cocoa Powder</div>
+          <div class="product-quick-weight">200g — Origine Cameroun</div>
+        </div>
+        <div class="product-quick-price">Rs 350</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES BAR -->
+<div id="features-bar">
+  <div class="features-grid">
+    <div class="feature-item reveal reveal-delay-1">
+      <div class="feature-icon">🌿</div>
+      <div class="feature-text">
+        <h4>100% Natural</h4>
+        <p>No sugar, no additives</p>
+      </div>
+    </div>
+    <div class="feature-item reveal reveal-delay-2">
+      <div class="feature-icon">✈️</div>
+      <div class="feature-text">
+        <h4>Origine Cameroun</h4>
+        <p>Premium cacao source</p>
+      </div>
+    </div>
+    <div class="feature-item reveal reveal-delay-3">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-text">
+        <h4>Island Delivery</h4>
+        <p>All across Mauritius</p>
+      </div>
+    </div>
+    <div class="feature-item reveal reveal-delay-4">
+      <div class="feature-icon">⭐</div>
+      <div class="feature-text">
+        <h4>5-Star Quality</h4>
+        <p>Loved by customers</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <span class="section-tag">Our Products</span>
+    <h2 class="section-title">Choose Your Pack</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subtitle">Artisanally processed cocoa powder — dark, rich, and full of natural goodness. Perfect for baking, beverages, and cooking.</p>
+  </div>
+
+  <div class="products-grid products-grid-2">
+    <!-- 200g -->
+    <div class="product-card reveal reveal-delay-1">
+      <div class="product-img-area">
+        <div class="pkg-mockup" aria-hidden="true">
+          <div class="pkg-pouch">
+            <div class="pkg-label">
+              <div class="pkg-brand">GOL POWDER CACAO</div>
+              <div class="pkg-title">Poudre de<br>cacao</div>
+              <div class="pkg-natural">100% Naturel</div>
+              <div class="pkg-weight">200 g</div>
+              <div class="pkg-origin">Origine Cameroun</div>
+            </div>
+            <div class="pkg-powder"></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Cocoa Powder 200g</div>
+        <div class="product-weight">Gol Powder Cacao · Origine Cameroun</div>
+        <ul class="product-features">
+          <li>100% natural cacao, no sugar added</li>
+          <li>No preservatives or artificial colours</li>
+          <li>Dark colour, rich &amp; intense aroma</li>
+          <li>Fine, homogeneous texture</li>
+          <li>100% cacao content</li>
+        </ul>
+        <div class="product-nutrition">
+          <h5>Nutrition per 100g</h5>
+          <div class="nutrition-row"><span>Energy</span><span>330–350 kcal</span></div>
+          <div class="nutrition-row"><span>Protein</span><span>24–28 g</span></div>
+          <div class="nutrition-row"><span>Fat</span><span>10–11 g</span></div>
+          <div class="nutrition-row"><span>Carbs</span><span>12–15 g</span></div>
+          <div class="nutrition-row"><span>Fibre</span><span>30–40 g</span></div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-highlight">
+            <div class="product-price-big">Rs 350</div>
+            <div class="price-per">/ 200g pack</div>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a href="https://wa.me/23054855847?text=Hello!%20I%27d%20like%20to%20order%20the%20200g%20Cocoa%20Powder%20(Rs%20350)%20from%20Golden%20Cocoa%20%F0%9F%8D«" target="_blank" rel="noopener" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order via WhatsApp
+          </a>
+          <a href="https://www.facebook.com/share/18KAdNe2mc/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Contact on Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 400g FEATURED - Best Value -->
+    <div class="product-card featured reveal reveal-delay-2">
+      <div class="product-badge">Best Value · Save Rs 50</div>
+      <div class="product-img-area">
+        <div class="pkg-mockup pkg-large" aria-hidden="true">
+          <div class="pkg-pouch">
+            <div class="pkg-label">
+              <div class="pkg-brand">GOL POWDER CACAO</div>
+              <div class="pkg-title">Poudre de<br>cacao</div>
+              <div class="pkg-natural">100% Naturel</div>
+              <div class="pkg-weight">400 g</div>
+              <div class="pkg-origin">Origine Cameroun</div>
+            </div>
+            <div class="pkg-powder"></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Cocoa Powder 400g</div>
+        <div class="product-weight">Gol Powder Cacao · Origine Cameroun</div>
+        <ul class="product-features">
+          <li>100% natural cacao, no sugar added</li>
+          <li>No preservatives or artificial colours</li>
+          <li>Dark colour, rich &amp; intense aroma</li>
+          <li>Fine, homogeneous texture</li>
+          <li>Ideal for bakeries &amp; chocolatiers</li>
+        </ul>
+        <div class="product-nutrition">
+          <h5>Nutrition per 100g</h5>
+          <div class="nutrition-row"><span>Energy</span><span>330–350 kcal</span></div>
+          <div class="nutrition-row"><span>Protein</span><span>24–28 g</span></div>
+          <div class="nutrition-row"><span>Fat</span><span>10–11 g</span></div>
+          <div class="nutrition-row"><span>Carbs</span><span>12–15 g</span></div>
+          <div class="nutrition-row"><span>Fibre</span><span>30–40 g</span></div>
+        </div>
+        <div class="product-price-row">
+          <div class="price-highlight price-highlight-featured">
+            <div class="product-price-big">Rs 650</div>
+            <div class="price-per">/ 400g pack</div>
+          </div>
+        </div>
+        <div class="product-actions">
+          <a href="https://wa.me/23054855847?text=Hello!%20I%27d%20like%20to%20order%20the%20400g%20Cocoa%20Powder%20(Rs%20650)%20from%20Golden%20Cocoa%20%F0%9F%8D«" target="_blank" rel="noopener" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Order via WhatsApp
+          </a>
+          <a href="https://www.facebook.com/share/18KAdNe2mc/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn-facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Contact on Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Price comparison strip -->
+  <div class="price-compare reveal" style="max-width:900px;margin:3rem auto 0;">
+    <div class="price-compare-item">
+      <span class="pc-label">200g Pack</span>
+      <span class="pc-price">Rs 350</span>
+      <span class="pc-rate">Rs 1.75 / g</span>
+    </div>
+    <div class="price-compare-divider"></div>
+    <div class="price-compare-item pc-featured">
+      <span class="pc-label">400g Pack</span>
+      <span class="pc-price">Rs 650</span>
+      <span class="pc-rate">Rs 1.63 / g · Best value</span>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SHOWCASE -->
+<section id="showcase">
+  <div class="showcase-inner">
+    <div class="showcase-content reveal">
+      <span class="section-tag">See the Product</span>
+      <h2 class="section-title" style="color:var(--white);">Real Cocoa.<br>Real Quality.</h2>
+      <div class="divider"></div>
+      <p style="color:rgba(255,255,255,0.65);line-height:1.9;margin-bottom:1.5rem;">
+        Watch our premium <strong style="color:var(--gold-light);">Gol Powder Cacao</strong> — sourced from Cameroun and artisanally processed. 100% natural, no sugar, no additives. Just the pure, rich aroma of authentic African cacao.
+      </p>
+      <ul class="showcase-checks">
+        <li>Artisanal drying &amp; grinding process</li>
+        <li>Fine, homogeneous powder texture</li>
+        <li>Deep, natural dark-brown colour</li>
+        <li>Available in 200g and 400g packs</li>
+      </ul>
+      <a href="https://wa.me/23054855847?text=Hello!%20I%20saw%20the%20product%20video%20and%20want%20to%20order%20%F0%9F%8D«" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem;">
+        Order Now
+      </a>
+    </div>
+    <div class="showcase-video-wrap reveal reveal-delay-2">
+      <div class="showcase-video-frame">
+        <video
+          class="showcase-video"
+          src="assets/cocoa-video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+        ></video>
+        <div class="video-glow"></div>
+      </div>
+      <div class="showcase-video-badge">
+        <span class="vb-dot"></span>
+        100% Natural Product
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-img-box">
+        <span style="font-size:6rem;position:relative;z-index:1;">🌱</span>
+      </div>
+      <div class="about-badge-float">
+        <div class="num">100%</div>
+        <div class="label">Pure Cacao</div>
+      </div>
+    </div>
+    <div class="about-content reveal reveal-delay-2">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title" style="color:var(--white);">From the Heart<br>of Cameroun</h2>
+      <div class="divider"></div>
+      <p>Golden Cocoa was born from a passion for authenticity. We source only the finest cacao beans from the rich volcanic soils of Cameroun — where cacao has been cultivated for generations with artisanal care and deep respect for the land.</p>
+      <p>Our cocoa powder undergoes a natural drying and grinding process with absolutely no additives, no sugar, and no preservatives. What you receive is pure, raw cacao — exactly as nature intended.</p>
+      <p>Based in Rose Hill, Beau Bassin, we are proud to bring premium African cacao directly to the families, bakeries, and chocolate lovers of Mauritius.</p>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-icon">🌿</div>
+          <h4>Pure &amp; Natural</h4>
+          <p>Zero additives, zero compromises on quality.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">🤝</div>
+          <h4>Trusted Source</h4>
+          <p>Direct from Cameroun artisan producers.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">🍫</div>
+          <h4>Rich Flavour</h4>
+          <p>Deep, dark cacao intensity in every gram.</p>
+        </div>
+        <div class="about-value">
+          <div class="about-value-icon">💪</div>
+          <h4>Health First</h4>
+          <p>High protein, high fibre, low sugar — naturally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="benefits-header">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title">The Golden Difference</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subtitle">Every bag of Golden Cocoa is a commitment to purity, health, and flavour — no shortcuts, no compromises.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-icon">💪</div>
+      <h3>High in Protein</h3>
+      <p>24–28g of protein per 100g makes it a powerhouse supplement for active lifestyles and muscle recovery.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-icon">🧘</div>
+      <h3>Rich in Minerals</h3>
+      <p>Packed with magnesium, iron, potassium, copper, and manganese — essential nutrients your body craves.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <div class="benefit-icon">🌾</div>
+      <h3>High Fibre</h3>
+      <p>30–40g of dietary fibre per 100g supports healthy digestion and keeps you feeling full and energised.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-4">
+      <div class="benefit-icon">🚫</div>
+      <h3>Zero Sugar Added</h3>
+      <p>Under 1g of sugar per 100g. Ideal for diabetic-friendly recipes and clean-eating lifestyles.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="benefit-icon">🍰</div>
+      <h3>Versatile Use</h3>
+      <p>Perfect for baking, chocolate drinks, desserts, smoothies, bakeries, and gourmet cooking.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="benefit-icon">⚡</div>
+      <h3>Natural Energy</h3>
+      <p>330–350 kcal per 100g of clean, sustained energy — without the crash of processed alternatives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header">
+    <span class="section-tag">Testimonials</span>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="divider divider-center"></div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">The flavour is absolutely incredible — deep, dark, and rich. I use it in all my chocolate cakes now. Nothing else compares to the quality of Golden Cocoa!</p>
+      <div class="review-author">
+        <div class="review-avatar">P</div>
+        <div>
+          <div class="review-name">Priya Ramnarain</div>
+          <div class="review-location">Quatre Bornes, Mauritius</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-2">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I ordered the 500g pack for my bakery and my clients immediately noticed the difference. Pure cocoa, no bitterness from chemicals. Will reorder every month!</p>
+      <div class="review-author">
+        <div class="review-avatar">J</div>
+        <div>
+          <div class="review-name">Jean-Marie Laborde</div>
+          <div class="review-location">Rose Hill, Mauritius</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-3">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">As a fitness enthusiast, I mix this into my morning smoothie. The protein content is amazing and it's completely natural. Super fast delivery too!</p>
+      <div class="review-author">
+        <div class="review-avatar">S</div>
+        <div>
+          <div class="review-name">Sanjay Boodhna</div>
+          <div class="review-location">Curepipe, Mauritius</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-4">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Ordered via WhatsApp and received my package the next day. The packaging was perfect and the cocoa smells divine. Highly recommend to everyone!</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div>
+          <div class="review-name">Amina Osman</div>
+          <div class="review-location">Port Louis, Mauritius</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal reveal-delay-1">
+      <div class="review-quote">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">My chocolate boutique has never had such great reviews since switching to Golden Cocoa. The purity of the ingredient makes all the difference. Merci!</p>
+      <div class="review-author">
+        <div class="review-avatar">M</div>
+        <div>
+          <div class="review-name">Marie-Claire Dupont</div>
+          <div class="review-location">Beau Bassin, Mauritius</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section id="delivery">
+  <div class="delivery-inner">
+    <div class="delivery-content reveal">
+      <span class="section-tag">Fast Delivery</span>
+      <h2 class="section-title">Delivered to Your Door</h2>
+      <div class="divider"></div>
+      <p>We deliver Golden Cocoa across the entire island of Mauritius — from Port Louis to Mahébourg, from Tamarin to Flacq. Fast, reliable, and carefully packaged to preserve freshness.</p>
+      <div class="delivery-steps">
+        <div class="delivery-step">
+          <div class="delivery-step-num">1</div>
+          <div class="delivery-step-text">
+            <h4>Place Your Order</h4>
+            <p>Message us on WhatsApp or Facebook with your order.</p>
+          </div>
+        </div>
+        <div class="delivery-step">
+          <div class="delivery-step-num">2</div>
+          <div class="delivery-step-text">
+            <h4>We Confirm &amp; Pack</h4>
+            <p>Your order is carefully packed to ensure freshness.</p>
+          </div>
+        </div>
+        <div class="delivery-step">
+          <div class="delivery-step-num">3</div>
+          <div class="delivery-step-text">
+            <h4>Swift Delivery</h4>
+            <p>We deliver across Mauritius — fast and reliable.</p>
+          </div>
+        </div>
+        <div class="delivery-step">
+          <div class="delivery-step-num">4</div>
+          <div class="delivery-step-text">
+            <h4>Enjoy Your Cocoa</h4>
+            <p>Pure, fresh, and ready to use in all your recipes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delivery-map reveal reveal-delay-2">
+      <div class="delivery-map-icon">🗺️</div>
+      <h3>We Cover All Mauritius</h3>
+      <p style="color:rgba(255,255,255,0.55);font-size:0.88rem;line-height:1.8;">Our base is in Rose Hill, Beau Bassin — but we deliver island-wide with care.</p>
+      <div class="coverage-items">
+        <span class="coverage-item">Port Louis</span>
+        <span class="coverage-item">Rose Hill</span>
+        <span class="coverage-item">Beau Bassin</span>
+        <span class="coverage-item">Curepipe</span>
+        <span class="coverage-item">Quatre Bornes</span>
+        <span class="coverage-item">Vacoas</span>
+        <span class="coverage-item">Phoenix</span>
+        <span class="coverage-item">Moka</span>
+        <span class="coverage-item">Mahébourg</span>
+        <span class="coverage-item">Tamarin</span>
+        <span class="coverage-item">Flacq</span>
+        <span class="coverage-item">+ Everywhere</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;max-width:520px;margin:0 auto 3.5rem;">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Ready to Order?</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subtitle">Reach out via WhatsApp, Facebook, or our contact form — we respond fast!</p>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3 class="section-title" style="font-size:1.8rem;">Say Hello</h3>
+      <div class="contact-channels">
+        <a href="https://wa.me/23054855847" target="_blank" rel="noopener" class="contact-channel channel-wa">
+          <div class="contact-channel-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="contact-channel-text">
+            <h4>WhatsApp</h4>
+            <p>+230 5485 5847 — Chat instantly</p>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/share/18KAdNe2mc/?mibextid=wwXIfr" target="_blank" rel="noopener" class="contact-channel channel-fb">
+          <div class="contact-channel-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </div>
+          <div class="contact-channel-text">
+            <h4>Facebook</h4>
+            <p>Golden Cocoa — Follow &amp; Message</p>
+          </div>
+        </a>
+        <div class="contact-channel channel-loc" style="cursor:default;">
+          <div class="contact-channel-icon">📍</div>
+          <div class="contact-channel-text">
+            <h4>Location</h4>
+            <p>Rose Hill, Beau Bassin, Mauritius</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-box reveal reveal-delay-2">
+      <h3>Send Us a Message</h3>
+      <form id="contactForm" onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Priya Ramnarain" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what you'd like to order or ask..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+        <div class="form-success" id="formSuccess">
+          ✓ Message received! We'll get back to you very soon.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Golden<span>Cocoa</span></div>
+      <p>Premium 100% natural cocoa powder, sourced from Cameroun and delivered fresh across the island of Mauritius. Pure Taste, Pure Energy.</p>
+      <div class="footer-socials">
+        <a href="https://wa.me/23054855847" target="_blank" rel="noopener" class="footer-social" title="WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/18KAdNe2mc/?mibextid=wwXIfr" target="_blank" rel="noopener" class="footer-social" title="Facebook">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/23054855847" target="_blank" rel="noopener">+230 5485 5847</a></li>
+        <li><a href="https://www.facebook.com/share/18KAdNe2mc/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook Page</a></li>
+        <li><a href="#contact">Send a Message</a></li>
+        <li style="color:rgba(255,255,255,0.35);font-size:0.88rem;">Rose Hill, Beau Bassin,<br>Mauritius</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Golden Cocoa. All rights reserved.</span>
+    <span class="footer-made">Made with <span>♥</span> in Mauritius</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/23054855847?text=Hello%20Golden%20Cocoa!%20I%27d%20like%20to%20order%20some%20cocoa%20powder%20%F0%9F%8D«" target="_blank" rel="noopener" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  Chat on WhatsApp
+</a>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Contact form — redirect to WhatsApp with message
+  function handleForm(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const text = encodeURIComponent(
+      `Hello Golden Cocoa!\n\nName: ${name}\nEmail: ${email}\n\nMessage: ${message}`
+    );
+    window.open(`https://wa.me/23054855847?text=${text}`, '_blank');
+    document.getElementById('formSuccess').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 5000);
+  }
+
+  // Smooth fade-in on hero load
+  document.querySelector('.hero-content').style.opacity = '0';
+  document.querySelector('.hero-content').style.transform = 'translateY(24px)';
+  setTimeout(() => {
+    const hc = document.querySelector('.hero-content');
+    hc.style.transition = 'opacity 0.9s ease, transform 0.9s ease';
+    hc.style.opacity = '1';
+    hc.style.transform = 'none';
+  }, 200);
+</script>
+</body>
+</html>
